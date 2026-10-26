@@ -1,0 +1,25 @@
+# FastPress Skills
+
+The agent-ops kit behind FastPress Labs: three installable skills plus zero-dependency companion scripts.
+
+## Install
+
+`npx skills add fastpresspages/skills`
+
+## Skills
+
+- fastpress-release — ship a new project end-to-end using the FastPress Labs playbook (name research, standard kit, audit loop, Pages, release, cross-links).
+- fastpress-teardown — weekly public field scans of fresh launch pages with a removal-on-request policy. Companion script `skills/fastpress-teardown/scripts/hn-top.mjs` (read-only HN picker).
+- fastpress-support — triage the one inbox into audit / deal / collab / support / spam and answer honestly. Companion script `skills/fastpress-support/scripts/triage.mjs` (stdin classifier).
+
+## Facts
+
+- Apache-2.0, zero runtime dependencies, Node >= 18.17, no telemetry.
+- Scripts are read-only by design; agents following the skills never auto-submit forms or send mail.
+- Site: https://fastpresspages.github.io/skills/ (privacy.html and terms.html disclose the form pipeline).
+
+## Related
+
+- LaunchGrade: grade launch pages (54 checks) - github.com/fastpresspages/launchgrade
+- RepoGrade: grade repos (33 checks) - github.com/fastpresspages/repograde
+- Org: github.com/fastpresspages

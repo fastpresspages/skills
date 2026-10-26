@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skills-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kit:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Zero runtime dependencies check
+        run: |
+          node -e "const p=require('./package.json'); if (p.dependencies) { console.error('runtime deps are forbidden in this repo'); process.exit(1); } console.log('clean');"
+      - name: Kit self-check
+        run: node scripts/selfcheck.mjs
+      - name: Script syntax (--check)
+        run: |
+          node --check skills/fastpress-teardown/scripts/hn-top.mjs
+          node --check skills/fastpress-support/scripts/triage.mjs
+      - name: Link check (internal)
+        run: node scripts/check-links.mjs
+
+  site-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+      - name: Site sanity
+        run: node scripts/check-links.mjs

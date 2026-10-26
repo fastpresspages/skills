@@ -1,0 +1,24 @@
+{
+  "name": "fastpress-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The agent-ops kit behind FastPress Labs: installable skills (fastpress-release, fastpress-teardown, fastpress-support) and their zero-dependency companion scripts.",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/selfcheck.mjs",
+    "hn": "node skills/fastpress-teardown/scripts/hn-top.mjs 10",
+    "triage": "node skills/fastpress-support/scripts/triage.mjs"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": ["agent-skills", "skills-sh", "claude", "mcp", "opencode", "open-source", "fastpress-labs"],
+  "author": "FastPress Labs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastpresspages/skills.git"
+  },
+  "homepage": "https://fastpresspages.github.io/skills/",
+  "bugs": "https://github.com/fastpresspages/skills/issues"
+}

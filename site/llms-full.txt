@@ -1,0 +1,44 @@
+# llms-full.txt — everything an agent should know about this kit
+
+# FastPress Skills (org: FastPress Labs)
+
+FastPress Skills is a kit of installable agent skills + companion scripts. It is
+markdown-plus-Node-stdlib only: three SKILL.md files, two read-only .mjs scripts, one
+self-check. No telemetry, no background services, no accounts.
+
+## Skills
+
+1. fastpress-release — the ship playbook: name research (npm registry + GitHub search),
+   standard kit files (README+badges, LICENSE Apache-2.0, CHANGELOG, CONTRIBUTING, Security,
+   Support, AGENTS.md, llms.txt heading-first, robots+sitemap, favicon/og, ci.yml+pages.yml),
+   the mandatory LaunchGrade audit loop, GitHub Pages enablement, release tagging with honest
+   notes, and cross-linking (org profile table, flagship READMEs, GOALS baseline).
+
+2. fastpress-teardown — public field scans: pick fresh Show-HN launches with
+   skills/fastpress-teardown/scripts/hn-top.mjs (reads https://hacker-news.firebaseio.com/v0,
+   Firebase API, prints id/points/url/title), grade with full (non-fast) LaunchGrade scans,
+   publish strengths-first artifacts with an open selection-bias note, honor removal requests
+   within a day, and re-scan two weeks later with --compare to publish real improvements.
+
+3. fastpress-support — inbox triage for meetcode99@gmail.com: classify with
+   skills/fastpress-support/scripts/triage.mjs (stdin only; buckets audit/deal/collab/support/
+   spam, keyword+money-signal scoring, safe default 'support'), then follow the per-bucket
+   rules: audits get dated scans and 2-4 factual fixes; deals follow
+   outreach/docs/deals.md (ladder, written scope, 50% upfront, no invented scarcity);
+   collaborators get pointed to good-first-issues; spam gets archived, not answered.
+
+## Script guarantees
+
+- hn-top.mjs: GET-only to the Firebase API, no keys, 8s per-item timeout, skips non-HTTP URLs.
+- triage.mjs: reads stdin (3s cap), prints one ranked bucket line; it never opens sockets.
+- No script POSTs, emails, comments, or submits forms. Publishing steps run only through the
+  SKILL.md rule paths.
+
+## House contract
+
+- Frontmatter name === folder name; description one sentence; license Apache-2.0.
+- scripts/selfcheck.mjs (npm test) enforces frontmatter, ESM-cleanliness, wiring, README rows.
+- Site: https://fastpresspages.github.io/skills/ — deploy from site/ by GitHub Actions;
+  LaunchGrade-audited (latest committed sample under samples/). The no-analytics warning is
+  intentional and stays.
+- Never claim stars, users, installs or deals. Use dated, sourced numbers only.

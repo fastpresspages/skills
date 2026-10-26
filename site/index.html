@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastPress Skills — the agent-ops kit behind FastPress Labs</title>
+<meta name="description" content="Three installable agent skills for shipping repos, weekly field scans and honest inbox triage, plus zero-dependency Node scripts. Free, Apache-2.0.">
+<link rel="canonical" href="https://fastpresspages.github.io/skills/">
+<meta name="theme-color" content="#08080A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FastPress Labs">
+<meta property="og:title" content="FastPress Skills — the agent-ops kit behind FastPress Labs">
+<meta property="og:description" content="Three installable agent skills for shipping repos, weekly field scans and honest inbox triage, plus zero-dependency Node scripts. Free, Apache-2.0.">
+<meta property="og:url" content="https://fastpresspages.github.io/skills/">
+<meta property="og:image" content="https://fastpresspages.github.io/skills/assets/og.png">
+<meta property="og:image:alt" content="FastPress Labs Skills: FS tile, headline 'Agent skills that ship, scan and triage.' and the three skill names">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FastPress Skills — the agent-ops kit behind FastPress Labs">
+<meta name="twitter:description" content="Three installable agent skills for shipping repos, weekly field scans and honest inbox triage, plus zero-dependency Node scripts. Free, Apache-2.0.">
+<meta name="twitter:image" content="https://fastpresspages.github.io/skills/assets/og.png">
+<meta name="twitter:image:alt" content="FastPress Labs Skills: FS tile, headline 'Agent skills that ship, scan and triage.' and the three skill names">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://fastpresspages.github.io/skills/#org","name":"FastPress Labs","url":"https://github.com/fastpresspages","email":"meetcode99@gmail.com","description":"Open-source launch tools for people who ship. Free forever, agent-ready, no fake metrics."},{"@type":"WebSite","@id":"https://fastpresspages.github.io/skills/#site","url":"https://fastpresspages.github.io/skills/","name":"FastPress Skills","publisher":{"@id":"https://fastpresspages.github.io/skills/#org"},"hasPart":[{"@type":"CreativeWork","name":"fastpress-release","description":"Ship a new project end-to-end with the FastPress Labs playbook."},{"@type":"CreativeWork","name":"fastpress-teardown","description":"Weekly public field scans with a removal-on-request policy."},{"@type":"CreativeWork","name":"fastpress-support","description":"Honest triage of the one inbox: audit, deal, collab, support or spam."}]},{"@type":"FAQPage","@id":"https://fastpresspages.github.io/skills/#faq","mainEntity":[{"@type":"Question","name":"How do I install the skills?","acceptedAnswer":{"@type":"Answer","text":"Run npx skills add fastpresspages/skills. Each skill is a folder with a SKILL.md; installers like skills.sh read the frontmatter."}},{"@type":"Question","name":"What can the scripts actually do?","acceptedAnswer":{"@type":"Answer","text":"Read only: the HN picker lists fresh Show HN launches and the triage script classifies message text on stdin. Nothing posts, sends or submits automatically."}},{"@type":"Question","name":"Are the skills free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Apache-2.0, zero runtime dependencies, no telemetry, no accounts."}},{"@type":"Question","name":"Who wrote them?","acceptedAnswer":{"@type":"Answer","text":"FastPress Labs (Meet Shah), with agents doing the drafting and humans reviewing before publish. The same kit shipped every FastPress Labs repo."}}]}]}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="brand-tile" aria-hidden="true">FS</span><span>FastPress <b>Skills</b></span></a>
+    <button class="btn-ghost menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="menu">
+      <a href="#skills">Skills</a>
+      <a href="#install">Install</a>
+      <a href="#how">How it stays safe</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a class="pill" href="https://github.com/fastpresspages/skills">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero wrap">
+  <p class="kicker">From FastPress Labs · Apache-2.0 · zero runtime deps</p>
+  <h1>Agent skills that ship, scan and triage.</h1>
+  <p class="lede">The playbook behind every FastPress Labs repo, packaged as three installable skills: a release playbook, a weekly field-scan routine, and an honest inbox triage. Markdown plus tiny zero-dependency scripts — nothing you can't read in one sitting.</p>
+  <div class="install" id="install">
+    <code id="install-cmd">npx skills add fastpresspages/skills</code>
+    <button class="btn copy" data-copy="#install-cmd" aria-label="Copy install command">Copy</button>
+  </div>
+  <p class="note">Works with skills.sh-compatible agents (Claude Code, OpenCode…). Frontmatter is plain YAML.</p>
+</section>
+
+<section class="wrap grid" id="skills">
+  <article class="card">
+    <h2><span class="tag">01</span> fastpress-release</h2>
+    <p>Ship a new project end-to-end: name research (npm + GitHub), the standard kit files, the LaunchGrade audit loop, GitHub Pages, release tagging and cross-linking. Inputs, guardrails and ship order included.</p>
+    <a class="link" href="https://github.com/fastpresspages/skills/tree/main/skills/fastpress-release">Read the skill</a>
+  </article>
+  <article class="card">
+    <h2><span class="tag">02</span> fastpress-teardown</h2>
+    <p>Weekly public field scans: pick fresh HN launches with the read-only picker, grade them fully (not <code>--fast</code>), publish strengths-first with a removal-on-request policy, re-scan with <code>--compare</code>.</p>
+    <a class="link" href="https://github.com/fastpresspages/skills/tree/main/skills/fastpress-teardown">Read the skill</a>
+  </article>
+  <article class="card">
+    <h2><span class="tag">03</span> fastpress-support</h2>
+    <p>One inbox, five buckets: audit, deal, collab, support, spam. Classify with the stdin script, act with the smallest honest unit first, escalate deals through the written deal ladder only.</p>
+    <a class="link" href="https://github.com/fastpresspages/skills/tree/main/skills/fastpress-support">Read the skill</a>
+  </article>
+</section>
+
+<section class="wrap start" id="how">
+  <h2>How it stays safe</h2>
+  <ul class="checks">
+    <li><strong>Scripts read, never act.</strong> The picker only lists HN Show items; the triage script only reads stdin. No auto-posting, no auto-sending, no form submissions.</li>
+    <li><strong>Rules over vibes.</strong> Skills include the refusal rules: no fake metrics, no fake scarcity, no uninvited outreach, corrections within a day.</li>
+    <li><strong>Zero dependencies.</strong> Node ≥ 18.17 standard library only — you can read `hn-top.mjs` and `triage.mjs` in one sitting.</li>
+    <li><strong>CI-guarded.</strong> A self-check verifies frontmatter, script wiring and README consistency on every push.</li>
+  </ul>
+</section>
+
+<section class="wrap ask" id="ask">
+  <div class="ask-copy">
+    <h2>Questions, skill ideas, skill requests.</h2>
+    <p>Ask what a skill can or cannot do, or request one you need. One inbox, answered by a human (with agent help on the draft).</p>
+  </div>
+  <form class="lead-form" method="POST" action="https://formsubmit.co/meetcode99@gmail.com" data-ajax="https://formsubmit.co/ajax/meetcode99@gmail.com">
+    <input type="hidden" name="_honey" value="">
+    <input type="hidden" name="request_type" value="Skills question or suggestion">
+    <input type="hidden" name="page" value="fastpress-skills-site">
+    <input type="hidden" name="_subject" value="[FastPress Skills] Question or suggestion">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <label for="ask-email">Your email</label>
+    <input id="ask-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+    <label for="ask-message">Message</label>
+    <textarea id="ask-message" name="message" rows="4" required minlength="10" placeholder="Which skill would actually save you time?"></textarea>
+    <button type="submit" class="btn">Send</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+    <p class="note">Goes to meetcode99@gmail.com via formsubmit.co. See <a href="./privacy.html">privacy</a>.</p>
+  </form>
+</section>
+
+<section class="wrap faq" id="faq">
+  <h2>FAQ</h2>
+  <details><summary>How do I install the skills?</summary><p>Run <code>npx skills add fastpresspages/skills</code>. Each skill is a folder with a <code>SKILL.md</code>; installers read the frontmatter.</p></details>
+  <details><summary>What can the scripts actually do?</summary><p>Read only. The HN picker lists fresh Show HN launches; the triage script classifies message text on stdin. Nothing posts, sends or submits automatically.</p></details>
+  <details><summary>Are the skills free?</summary><p>Yes. Apache-2.0, zero runtime dependencies, no telemetry, no accounts.</p></details>
+  <details><summary>Who wrote them?</summary><p>FastPress Labs (Meet Shah), with agents drafting and humans reviewing before publish. The same kit shipped every FastPress Labs repo.</p></details>
+</section>
+
+<section class="wrap cta">
+  <h2>More from the lab</h2>
+  <p><a href="https://fastpresspages.github.io/launchgrade/">LaunchGrade</a> grades the page · <a href="https://github.com/fastpresspages/repograde">RepoGrade</a> grades the repo · <a href="https://fastpresspages.github.io/fastpress-start/">FastPress Start</a> is the template · <a href="https://fastpresspages.github.io/hire-me/">the hire page</a> shows the receipts.</p>
+</section>
+</main>
+
+<footer class="foot" id="about">
+  <div class="wrap cols">
+    <div class="col">
+      <h3>FastPress Skills</h3>
+      <p>The agent-ops kit behind FastPress Labs — free, agent-ready, no fake metrics. Runs on GitHub Pages; the only cookie-free tracking here is the visitor count in your own browser. No analytics are collected.</p>
+    </div>
+    <div class="col">
+      <h3>About</h3>
+      <p><a href="https://github.com/fastpresspages">FastPress Labs</a> is a small open studio: tools for the launch moment, kept free when free is possible, sold written-down when it isn't.</p>
+    </div>
+    <div class="col">
+      <h3>Pages</h3>
+      <p><a href="./privacy.html">Privacy</a><br><a href="./terms.html">Terms</a><br><a href="https://github.com/fastpresspages/skills">Source</a></p>
+    </div>
+  </div>
+  <p class="legal">© 2026 FastPress Labs · Apache-2.0</p>
+</footer>
+<script src="./app.js" defer></script>
+</body>
+</html>
