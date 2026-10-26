@@ -17,7 +17,7 @@ for (const name of skillNames) {
     fail(`${file} missing`);
     continue;
   }
-  const raw = readFileSync(file, 'utf8');
+  const raw = readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
   const m = raw.match(/^---\n([\s\S]*?)\n---/);
   if (!m) { fail(`${name}: frontmatter block missing`); continue; }
   const fm = m[1];
